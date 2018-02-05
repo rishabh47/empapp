@@ -1,0 +1,31 @@
+<nav class="navbar"></nav>
+<div class="row">
+  <div class="col-md-2 ">
+    <!-- sidebar starts -->
+    <nav class="nav-sidebar">
+      <ul class="nav" ng-init="item=2">
+        <li ng-click="item=0" ng-class="{'active':item==0}"><a ui-sref="home"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a></li>
+        <li ng-click="item=1" ng-class="{'active':item==1}"><a class="ex1" ui-sref="applyleave"><i class="fa fa-pencil" aria-hidden="true"></i> Apply Leave</a></li>
+        <li ng-click="item=2" ng-class="{'active':item==2}"><a class="ex1" ui-sref="leavelist"><i class="fa fa-list-ul" aria-hidden="true"></i> Leave Listing</a></li>
+        <li ng-click="item=3" ng-class="{'active':item==3}"><a class="ex1" ui-sref="adduser"><i class="fa fa-user" aria-hidden="true"></i> Add User</a></li>
+        <li ng-click="item=4" ng-class="{'active':item==4}"><a class="ex1" ui-sref="userlist"><i class="fa fa-list-ul" aria-hidden="true"></i> User Listing</a></li>
+        <li ng-click="item=5" ng-class="{'active':item==5}"><a class="ex1" ui-sref="addrole"><i class="fa fa-suitcase" aria-hidden="true"></i> Add Role </a></li>
+        <li ng-click="item=6" ng-class="{'active':item==6}"><a class="ex1" ui-sref="rolelist"><i class="fa fa-list-ul" aria-hidden="true"></i> Role Listing</a></li>
+      </ul>
+    </nav>
+    <!-- sidebar ends -->
+  </div>
+  <!-- main area starts -->
+  <div class="col-md-7 col-md-offset-1 brdr">
+    <br>
+<h2>All MembersLeave</h2>
+<br>
+<br>
+<div ng-if="gridOptions.data.length>0">
+  <div ui-grid="gridOptions" ui-grid-pagination class="grid">
+  </div>
+</div>
+<div ng-if="gridOptions.data.length==0">
+  <h2>No Data To Display</h2>
+</div>
+</div>
